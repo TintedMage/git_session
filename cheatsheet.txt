@@ -1,4 +1,5 @@
 git config --global init.defaultBranch main
+git config --global core.autocrlf true
 
 git status
 git init
