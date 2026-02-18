@@ -7,3 +7,5 @@ git status
 git init
 ( make a new file and add your name in it)
 git add .
+
+git commit -m "second commit" 
