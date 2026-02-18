@@ -1,4 +1,5 @@
 git config --global init.defaultBranch main
+git config --global core.autocrlf true
 
 git status
 git init
@@ -10,3 +11,5 @@ git commit -m "Initial Commit"
 git remote add origin <url_from_github>
 git branch -M main
 git push -u origin main
+
+git checkout -b feature-login
