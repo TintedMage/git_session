@@ -1,15 +1,45 @@
-git config --global init.defaultBranch main
-git config --global core.autocrlf true
+# --- SETUP (One-time) ---
+    git config --global user.name "Your Name"
+    git config --global user.email "email@example.com"
+    git config --global init.defaultBranch main
+    git config --global core.autocrlf true
 
-git status
-git init
-( make a new file and add your name in it - "hello_world.txt")
-git add .
+# --- STARTING A PROJECT ---
+    git init
+    # (Create hello_world.txt)
+    git add .
+    git commit -m "Initial Commit"
+    git remote add origin <URL_FROM_GITHUB>
+    git branch -M main
+    git push -u origin main
 
-git commit -m "Initial Commit" 
+# --- WORKING ON A FEATURE ---
+    git checkout -b feature-login    # Create & switch
+    # (Edit files)
+    git add .
+    git commit -m "Added login feature"
+    git push -u origin feature-login # Link and push the first time
 
-git remote add origin <url_from_github>
-git branch -M main
-git push -u origin main
+# --- SYNCING & UPDATING ---
+    git checkout main                # Go back to main
+    git pull origin main             # Get team's latest code
+    git branch -d feature-login      # Delete branch when done
 
-git checkout -b feature-login
+# --- FIXING CONFLICTS ---
+    # 1. Open the file with the <<<<<< HEAD markers.
+    # 2. Delete the markers and pick the correct code or combine it..
+    # 3. Save the file.
+    git add <filename>
+    git commit -m "Fixed conflict"
+    git push
+
+# --- REVERTING CHANGES ---
+    git checkout -- <filename>       # Discard changes in working directory
+    git reset --soft HEAD~1          # Undo last commit but keep changes
+    git reset --hard origin/main     # Reset to remote state, discarding all local changes
+
+# --- VIEWING HISTORY ---
+    git log                          # View commit history
+    git log --oneline --graph        # Compact view with branch visualization
+    git log --graph --all            # Visualize branches
+    
