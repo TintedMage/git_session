@@ -1,0 +1,12 @@
+git config --global init.defaultBranch main
+
+git status
+git init
+( make a new file and add your name in it - "hello_world.txt")
+git add .
+
+git commit -m "Initial Commit" 
+
+git remote add origin <url_from_github>
+git branch -M main
+git push -u origin main
